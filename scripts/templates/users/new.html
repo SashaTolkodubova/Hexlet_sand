@@ -1,0 +1,38 @@
+<form action="/users" method="post">
+    <div>
+        <label>
+            Имя
+            <input type="text" name="name">
+        </label>
+        {% if errors['name'] %}
+        <div>{{ errors['name'] }}</div>
+        {% endif %}
+    </div>
+    <div>
+        <label>
+            Email
+            <input type="email" required name="email">
+        </label>
+    </div>
+    <div>
+        <label>
+            Paid
+        </label>
+        <select name="paid" required>
+            <option disabled selected value> -- select an option --</option>
+            <option value=True> Yes</option>
+            <option value=False> No</option>
+        </select>
+    </div>
+    <input type="submit" value="Sign Up">
+</form>
+
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Example application</title>
+</head>
+
+

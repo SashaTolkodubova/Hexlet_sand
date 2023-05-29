@@ -1,0 +1,34 @@
+<!--<form action="/users" method="post">-->
+<form action="{{ url_for('patch_user', id=user['id']) }}" method="post">
+    <div>
+        <label>
+            Имя
+            <input type="text" name="name" value="{{ user['name'] }}">
+        </label>
+        {% if errors['name'] %}
+        <div>{{ errors['name'] }}</div>
+        {% endif %}
+    </div>
+    <div>
+        <label>
+            Email
+            <input type="email" required name="email" value="{{ user['email'] }}">
+        </label>
+    </div>
+    <div>
+        <label>
+            Paid
+        </label>
+        <select name="paid" required value="{{ user['paid'] }}">
+            <option disabled selected value> -- select an option --</option>
+            <option value=True> Yes</option>
+            <option value=False> No</option>
+        </select>
+    </div>
+    <input type="submit" value="Sign Up">
+</form>
+
+
+
+
+
